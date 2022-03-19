@@ -1,0 +1,43 @@
+{
+  "name": "space-war",
+  "description": "SpaceWar",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Uri Kalish <uri.kalish@gmail.com> (https://github.com/urikalish)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urikalish/space-war.git"
+  },
+  "bugs": {
+    "url": "https://github.com/urikalish/space-war/issues"
+  },
+  "homepage": "https://github.com/urikalish/space-war#readme",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf out-tsc && rimraf dist",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "tslint": "tslint -c tslint.json \"src/**/*.ts\"",
+    "tsc": "tsc",
+    "rollup": "rollup -c rollup.config.js",
+    "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup",
+    "test": "echo \"No test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build",
+      "pre-push": ""
+    }
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.2",
+    "web-vitals": "^2.1.4"
+  }
+}
