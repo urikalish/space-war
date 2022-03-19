@@ -18,7 +18,7 @@
     "tslint": "tslint -c tslint.json \"src/**/*.ts\"",
     "tsc": "tsc",
     "rollup": "rollup -c rollup.config.js",
-    "copy": "xcopy .\\public\\ .\\dist\\ /s /y",
+    "copy": "xcopy .\\public\\ .\\dist\\ /s /y /q",
     "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup && yarn copy",
     "test": "echo \"No test specified\" && exit 1",
     "prepare": "husky install"
