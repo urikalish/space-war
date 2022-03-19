@@ -12,7 +12,6 @@
     "url": "https://github.com/urikalish/space-war/issues"
   },
   "homepage": "https://github.com/urikalish/space-war#readme",
-  "main": "main.js",
   "scripts": {
     "clean": "rimraf out-tsc && rimraf dist",
     "prettier": "prettier --write \"src/**/*.ts\"",
