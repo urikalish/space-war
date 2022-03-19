@@ -1,6 +1,6 @@
 {
   "name": "space-war",
-  "description": "SpaceWar",
+  "description": "Space War",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Uri Kalish <uri.kalish@gmail.com> (https://github.com/urikalish)",
@@ -18,7 +18,8 @@
     "tslint": "tslint -c tslint.json \"src/**/*.ts\"",
     "tsc": "tsc",
     "rollup": "rollup -c rollup.config.js",
-    "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup",
+    "copy": "xcopy .\\public\\ .\\dist\\ /s /y",
+    "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup && yarn copy",
     "test": "echo \"No test specified\" && exit 1",
     "prepare": "husky install"
   },

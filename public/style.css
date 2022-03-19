@@ -1,0 +1,44 @@
+/* Play font */
+@font-face {
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Play'),
+    url('./font/play-v12-latin-ext_latin-regular.woff2') format('woff2'),
+    url('./font/play-v12-latin-ext_latin-regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Play'),
+    url('./font/play-v12-latin-ext_latin-700.woff2') format('woff2'),
+    url('./font/play-v12-latin-ext_latin-700.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Play, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.6rem;
+}
+
+code {
+    font-family: Consolas, 'Courier New', monospace;
+}
