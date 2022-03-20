@@ -15,8 +15,8 @@ export class Board {
         this.height = height;
         this.players = players;
         const halfShip = Ship.SHIP_SIZE / 2;
-        players[0].ship.init(Board.INITIAL_MARGIN + halfShip, Board.INITIAL_MARGIN + halfShip, 0.1, 0.1, 0, 0.1);
-        players[1].ship.init(width - Board.INITIAL_MARGIN - halfShip, height - Board.INITIAL_MARGIN - halfShip, -0.1, -0.1, 180, 0.1);
+        players[0].ship.init(Board.INITIAL_MARGIN + halfShip, Board.INITIAL_MARGIN + halfShip, Ship.V_INC_STEP / 2, Ship.V_INC_STEP / 2, 0, Ship.VA_STEP / 2);
+        players[1].ship.init(width - Board.INITIAL_MARGIN - halfShip, height - Board.INITIAL_MARGIN - halfShip, -Ship.V_INC_STEP / 2, -Ship.V_INC_STEP / 2, 180, Ship.VA_STEP / 2);
         this.cnv = document.getElementById('canvas') as HTMLCanvasElement;
         if (!this.cnv) return;
         this.cnv.width = width;

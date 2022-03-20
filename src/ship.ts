@@ -2,11 +2,10 @@ import { Player } from './player';
 
 export class Ship {
     public static SHIP_SIZE = 100;
-
-    VA_STEP = 0.2;
-    MAX_VA = 4;
-    V_INC_STEP = 0.2;
-    V_DEC_STEP = 0.2;
+    public static VA_STEP = 0.4;
+    public static MAX_VA = 4 - Ship.VA_STEP / 2;
+    public static V_INC_STEP = 0.2;
+    public static V_DEC_STEP = 0.2;
 
     public player: Player;
     public size: number = 0;
@@ -45,20 +44,20 @@ export class Ship {
     }
 
     speedInc() {
-        this.vx = this.vx + Math.cos((this.a * Math.PI) / 180) * this.V_INC_STEP;
-        this.vy = this.vy + Math.sin((this.a * Math.PI) / 180) * this.V_INC_STEP;
+        this.vx = this.vx + Math.cos((this.a * Math.PI) / 180) * Ship.V_INC_STEP;
+        this.vy = this.vy + Math.sin((this.a * Math.PI) / 180) * Ship.V_INC_STEP;
     }
 
     speedDec() {
-        this.vx = this.vx - Math.cos((this.a * Math.PI) / 180) * this.V_DEC_STEP;
-        this.vy = this.vy - Math.sin((this.a * Math.PI) / 180) * this.V_DEC_STEP;
+        this.vx = this.vx - Math.cos((this.a * Math.PI) / 180) * Ship.V_DEC_STEP;
+        this.vy = this.vy - Math.sin((this.a * Math.PI) / 180) * Ship.V_DEC_STEP;
     }
 
     turnInc() {
-        this.va = Math.min(this.va + this.VA_STEP, this.MAX_VA);
+        this.va = Math.min(this.va + Ship.VA_STEP, Ship.MAX_VA);
     }
 
     turnDec() {
-        this.va = Math.max(this.va - this.VA_STEP, -this.MAX_VA);
+        this.va = Math.max(this.va - Ship.VA_STEP, -Ship.MAX_VA);
     }
 }
