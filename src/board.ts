@@ -34,9 +34,15 @@ export class Board {
             if (!this.ctx) return;
             this.ctx.save();
             this.ctx.setTransform(1, 0, 0, 1, p.ship.x, p.ship.y); // sets scale and origin
-            this.ctx.rotate((((p.ship.ang + 90) % 360) * Math.PI) / 180);
+            this.ctx.rotate((((p.ship.a + 90) % 360) * Math.PI) / 180);
             this.ctx.drawImage(p.ship.img as CanvasImageSource, -p.ship.size / 2, -p.ship.size / 2);
             this.ctx.restore();
+        });
+    }
+
+    move() {
+        this.players.forEach((p) => {
+            p.ship.move();
         });
     }
 }

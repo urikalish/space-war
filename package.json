@@ -14,7 +14,7 @@
   "homepage": "https://github.com/urikalish/space-war#readme",
   "scripts": {
     "clean": "rimraf out-tsc && rimraf dist",
-    "prettier": "prettier --write \"src/**/*.ts\"",
+    "prettier": "prettier --write --loglevel warn \"src/**/*.ts\"",
     "tslint": "tslint -c tslint.json \"src/**/*.ts\"",
     "tsc": "tsc",
     "rollup": "rollup -c rollup.config.js --no-treeshake",

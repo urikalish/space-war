@@ -83,6 +83,7 @@ code {
 .canvas {
     background-image: url("img/back0.jpg");
     background-size: cover;
+    cursor: crosshair;
 }
 
 .ship {
