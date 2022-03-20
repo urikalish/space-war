@@ -3,6 +3,8 @@ import { Player } from './player';
 export class Ship {
     VA_STEP = 0.2;
     MAX_VA = 4;
+    V_INC_STEP = 0.2;
+    V_DEC_STEP = 0.2;
 
     public player: Player;
     public size: number = 0;
@@ -38,18 +40,20 @@ export class Ship {
     }
 
     speedInc() {
-        this.vx -= 0.1;
+        this.vx = this.vx + Math.cos((this.a * Math.PI) / 180) * this.V_INC_STEP;
+        this.vy = this.vy + Math.sin((this.a * Math.PI) / 180) * this.V_INC_STEP;
     }
 
     speedDec() {
-        this.vx += 0.1;
-    }
-
-    turnDec() {
-        this.va = Math.max(this.va - this.VA_STEP, -this.MAX_VA);
+        this.vx = this.vx - Math.cos((this.a * Math.PI) / 180) * this.V_DEC_STEP;
+        this.vy = this.vy - Math.sin((this.a * Math.PI) / 180) * this.V_DEC_STEP;
     }
 
     turnInc() {
         this.va = Math.min(this.va + this.VA_STEP, this.MAX_VA);
+    }
+
+    turnDec() {
+        this.va = Math.max(this.va - this.VA_STEP, -this.MAX_VA);
     }
 }

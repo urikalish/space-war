@@ -42,7 +42,21 @@ export class Board {
 
     move() {
         this.players.forEach((p) => {
-            p.ship.move();
+            const s = p.ship;
+            const h = s.size / 2;
+            s.move();
+            if (s.x + h < 0) {
+                console.log('*');
+                s.x = this.width + h;
+            } else if (s.x - h > this.width) {
+                console.log('*');
+                s.x = -h;
+            }
+            if (s.y + h < 0) {
+                s.y = this.height + h;
+            } else if (s.y - h > this.height) {
+                s.y = -h;
+            }
         });
     }
 }
