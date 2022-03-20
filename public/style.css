@@ -33,12 +33,58 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Play, Roboto, sans-serif;
+    background-color: #111;
+    color: #fff;
+    font-family: 'Play', 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
 }
 
 code {
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.display--none {
+    display: none !important;
+}
+
+.wrapper {
+    position: fixed;
+    inset: 0 0 0 0;
+    display: grid;
+    place-items: center;
+    background-color: #222;
+}
+
+.start-form {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    left: calc(50% - 25vw);
+    top: calc(50% - 25vh);
+    display: grid;
+    place-items: center;
+}
+
+.start-button {
+    padding: 16px 32px;
+    font-size: 2.4rem;
+    font-family: 'Play', 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas {
+    background-image: url("img/back0.jpg");
+    background-size: cover;
+}
+
+.ship {
+    width: 100px;
 }

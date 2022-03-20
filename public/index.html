@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>SpaceWar</div>
+    <div id="wrapper" class="wrapper">
+        <div id="container" class="container display--none">
+            <canvas id="canvas" class="canvas"></canvas>
+        </div>
+        <div id="start-form" class="start-form">
+            <button id="start-button" class="start-button" onclick="onClickStartGame();">START</button>
+            <img src="img/ship0.png" class="ship display--none" alt="ship0" />
+            <img src="img/ship1.png" class="ship display--none" alt="ship1" />
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

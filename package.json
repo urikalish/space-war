@@ -17,9 +17,9 @@
     "prettier": "prettier --write \"src/**/*.ts\"",
     "tslint": "tslint -c tslint.json \"src/**/*.ts\"",
     "tsc": "tsc",
-    "rollup": "rollup -c rollup.config.js",
-    "copy": "xcopy .\\public\\ .\\dist\\ /s /y /q",
-    "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup && yarn copy",
+    "rollup": "rollup -c rollup.config.js --no-treeshake",
+    "xcopy": "xcopy .\\public\\ .\\dist\\ /s /y /q",
+    "build": "yarn clean && yarn prettier && yarn tslint && yarn tsc && yarn rollup && yarn xcopy",
     "test": "echo \"No test specified\" && exit 1",
     "prepare": "husky install"
   },
