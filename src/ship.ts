@@ -1,6 +1,8 @@
 import { Player } from './player';
 
 export class Ship {
+    public static SHIP_SIZE = 100;
+
     VA_STEP = 0.2;
     MAX_VA = 4;
     V_INC_STEP = 0.2;
@@ -24,11 +26,14 @@ export class Ship {
         this.img.src = `img/ship${player.id}.png`;
     }
 
-    init(size: number, x: number, y: number, ang: number) {
-        this.size = size;
+    init(x: number, y: number, vx: number, vy: number, a: number, va: number) {
+        this.size = Ship.SHIP_SIZE;
         this.x = x;
         this.y = y;
-        this.a = ang;
+        this.vx = vx;
+        this.vy = vy;
+        this.a = a;
+        this.va = va;
     }
 
     move() {
